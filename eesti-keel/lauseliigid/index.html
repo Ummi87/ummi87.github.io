@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lihtne õppematerjal eesti keele lauseliikide kohta: lihtlause, liitlause ja koondlause. Reeglid, näited, komad ja enesetest.">
+<title>Eesti keele lauseliigid – lihtlause, liitlause ja koondlause</title>
+<style>
+:root{
+  --bg:#f5f7fb;--card:#fff;--text:#1f2937;--muted:#64748b;--line:#dbe3ef;
+  --blue:#2563eb;--blue2:#dbeafe;--green:#0f9f6e;--green2:#dff7ed;
+  --orange:#c56a10;--orange2:#fff3d8;--red:#c24141;--red2:#fee2e2;--violet:#6d4acb;
+  --shadow:0 8px 28px rgba(30,41,59,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+main{max-width:1050px;margin:0 auto;padding:24px 16px 64px}
+.hero{background:linear-gradient(135deg,#173b7a,#285dc7);color:#fff;border-radius:22px;padding:34px 28px;box-shadow:var(--shadow)}
+.hero h1{font-size:clamp(2rem,5vw,3rem);margin:0 0 10px;line-height:1.1}
+.hero p{margin:0;max-width:760px;font-size:1.08rem;color:#eaf1ff}
+.hero .tag{display:inline-block;margin-bottom:12px;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.14);font-weight:700;font-size:.84rem}
+.nav{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0 28px}
+.nav a{text-decoration:none;color:#1e3a8a;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 13px;font-weight:700;box-shadow:0 2px 8px rgba(30,41,59,.04)}
+section{margin-top:28px}
+h2{font-size:1.55rem;margin:0 0 14px}
+h3{margin:0 0 9px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+.card.simple{border-top:6px solid var(--blue)}
+.card.compound{border-top:6px solid var(--red)}
+.card.coond{border-top:6px solid var(--green)}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;font-size:.8rem;font-weight:800;margin-bottom:9px}
+.simple .badge{background:var(--blue2);color:#1d4ed8}
+.compound .badge{background:var(--red2);color:#9f2d2d}
+.coond .badge{background:var(--green2);color:#087757}
+.example{background:#f8fafc;border-radius:12px;padding:12px;margin-top:12px}
+.pred{color:#b42318;background:#fee4e2;border-radius:5px;padding:1px 4px;font-weight:800}
+.same{color:#0a7c5b;background:#def7ec;border-radius:5px;padding:1px 4px;font-weight:800}
+.rule{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px}
+.num{width:34px;height:34px;border-radius:50%;background:#e8efff;color:#1d4ed8;display:grid;place-items:center;font-weight:900;margin-bottom:10px}
+.tip{background:var(--orange2);border-left:5px solid var(--orange);padding:15px 18px;border-radius:10px;margin-top:14px}
+.tablewrap{overflow-x:auto;border-radius:16px;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;min-width:750px}
+th,td{padding:15px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{background:#183f83;color:#fff}
+tr:last-child td{border-bottom:0}
+.callout{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.good,.careful{border-radius:16px;padding:18px;background:#fff;box-shadow:var(--shadow)}
+.good{border-left:5px solid var(--green)}
+.careful{border-left:5px solid var(--orange)}
+ul{padding-left:21px}
+li+li{margin-top:8px}
+.quiz{display:grid;gap:12px}
+.q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.q p{margin:0 0 12px;font-weight:700}
+.choices{display:flex;gap:8px;flex-wrap:wrap}
+button{border:1px solid #cbd5e1;background:#fff;color:#24324a;padding:9px 12px;border-radius:10px;font-weight:750;cursor:pointer}
+button:hover{background:#f1f5f9}
+button.correct{background:#dcfce7;border-color:#7bcba3;color:#075d43}
+button.wrong{background:#fee2e2;border-color:#e49a9a;color:#8f1f1f}
+.feedback{margin-top:10px;min-height:24px;color:#475569}
+.score{margin-top:15px;padding:14px 16px;background:#eaf1ff;border-radius:12px;font-weight:800}
+.memory{font-size:1.08rem;background:#eef2ff;border:2px dashed #9bb2f3;border-radius:16px;padding:18px}
+.footer{color:var(--muted);text-align:center;margin-top:38px;font-size:.9rem}
+.printbtn{margin-top:16px;background:#fff;border-color:transparent;color:#173b7a}
+@media(max-width:800px){.cards,.steps,.callout{grid-template-columns:1fr}.hero{padding:27px 20px}.card{padding:17px}}
+@media print{
+ body{background:#fff}.nav,.printbtn,#test{display:none!important}.hero{background:#fff!important;color:#111;border:2px solid #333;box-shadow:none}.hero p{color:#333}.card,.rule,.step,.good,.careful,.tablewrap{box-shadow:none;break-inside:avoid}main{max-width:none;padding:0}
+}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div class="tag">ÕPPEMATERJAL</div>
+    <h1>Eesti keele lauseliigid</h1>
+    <p>Lihtlause, liitlause ja koondlause – kuidas neid kiiresti ära tunda ning kuhu panna koma.</p>
+    <button class="printbtn" onclick="window.print()">Prindi õppimiseks</button>
+  </header>
+
+  <nav class="nav" aria-label="Sisukord">
+    <a href="#pohireegel">Põhireegel</a>
+    <a href="#lauseliigid">Lauseliigid</a>
+    <a href="#komad">Komad</a>
+    <a href="#naited">Näited</a>
+    <a href="#test">Enesetest</a>
+  </nav>
+
+  <section id="pohireegel">
+    <h2>Kõige tähtsam: alusta öeldisest</h2>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><strong>Leia pöördeline tegusõna.</strong><br>See on tavaliselt lause öeldise keskne osa: <em>loeb, läks, mängivad, oli</em>.</div>
+      <div class="step"><div class="num">2</div><strong>Vaata, mitu tegevuskeskust on.</strong><br>Üks → liht- või koondlause. Kaks või rohkem → tavaliselt liitlause.</div>
+      <div class="step"><div class="num">3</div><strong>Kui on üks, otsi loetelu.</strong><br>Kas mitu sõna või fraasi vastavad samale küsimusele?</div>
+      <div class="step"><div class="num">4</div><strong>Kontrolli komasid.</strong><br>Liitlauses vaata osalause piire, koondlauses loetelu.</div>
+    </div>
+    <div class="tip"><strong>NB!</strong> Mõnikord kuulub öeldise juurde ka teine tegusõnavorm, näiteks <em>hakkas õppima</em> või <em>peab minema</em>. Neid ei tasu automaatselt lugeda kaheks eri osalauseks.</div>
+  </section>
+
+  <section id="lauseliigid">
+    <h2>Kolm lauseliiki</h2>
+    <div class="cards">
+      <article class="card simple">
+        <span class="badge">1 tegevuskeskus</span>
+        <h3>Lihtlause</h3>
+        <p>Lauses on üks öeldisega tegevus- või seisundikeskus. Lauses ei ole mitut iseseisvat osalauset.</p>
+        <div class="example">Õpilane <span class="pred">lahendab</span> ülesannet.</div>
+      </article>
+      <article class="card compound">
+        <span class="badge">2+ tegevuskeskust</span>
+        <h3>Liitlause</h3>
+        <p>Lause koosneb kahest või enamast osalausest. Igal osalausel on oma öeldis.</p>
+        <div class="example">Õpilane <span class="pred">lahendab</span> ülesannet, sest ta <span class="pred">tahab</span> head hinnet.</div>
+      </article>
+      <article class="card coond">
+        <span class="badge">1 tegevuskeskus + loetelu</span>
+        <h3>Koondlause</h3>
+        <p>Koondlause on lihtlause, milles on mitu samaväärset lauseliiget. Need vastavad samale küsimusele.</p>
+        <div class="example">Õpilane <span class="pred">lahendab</span> <span class="same">matemaatika</span>, <span class="same">füüsika</span> ja <span class="same">keemia</span> ülesandeid.</div>
+      </article>
+    </div>
+
+    <div class="memory" style="margin-top:16px">
+      <strong>Meelespea:</strong> <b>1 öeldis</b> → vaata, kas on loetelu. <b>2 või rohkem eri osalause öeldist</b> → liitlause.
+    </div>
+  </section>
+
+  <section id="komad">
+    <h2>Kuidas komasid kasutada?</h2>
+    <div class="callout">
+      <div class="good">
+        <h3>Koondlause</h3>
+        <ul>
+          <li>Loetelu liikmete vahele pannakse tavaliselt koma: <em>Ostsin õunu, pirne, ploome.</em></li>
+          <li>Kui viimaseid liikmeid seob <strong>ja, ning, ega, ehk, või</strong>, siis nende ette tavaliselt koma ei panda: <em>õunu, pirne ja ploome</em>.</li>
+          <li>Korduvate sidesõnade korral võib koma olla vajalik: <em>nii õunad, pirnid kui ka ploomid</em>.</li>
+        </ul>
+      </div>
+      <div class="careful">
+        <h3>Liitlause</h3>
+        <ul>
+          <li>Osalaused eraldatakse sageli komaga: <em>Ma tulen, kui töö valmis saab.</em></li>
+          <li>Enne sõnu <strong>et, sest, kuigi, ehkki, aga, kuid, vaid</strong> tuleb osalause piiril tavaliselt koma.</li>
+          <li><strong>ja, ning, ega, ehk, või</strong> ette koma ei panda automaatselt. Otsusta osalause ehituse järgi.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tip"><strong>Oluline:</strong> sõna <em>nagu</em> ette ei käi koma alati. Näiteks <em>Ta jookseb nagu tuul</em> – koma ei ole. Kui <em>nagu</em> alustab osalauset oma öeldisega, võib koma olla vajalik: <em>Ta tegi, nagu õpetaja soovitas.</em></div>
+  </section>
+
+  <section id="naited">
+    <h2>Võrdle näiteid</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Lause</th><th>Liik</th><th>Miks?</th></tr></thead>
+        <tbody>
+          <tr><td>Koer <span class="pred">magab</span> diivanil.</td><td><strong>Lihtlause</strong></td><td>Üks öeldis, loetelu ei ole.</td></tr>
+          <tr><td>Koer <span class="pred">magab</span> diivanil, aga kass <span class="pred">istub</span> aknal.</td><td><strong>Liitlause</strong></td><td>Kaks osalauset ja kaks eri öeldist.</td></tr>
+          <tr><td>Koer <span class="pred">magab</span> diivanil, vaibal ja voodis.</td><td><strong>Koondlause</strong></td><td>Üks öeldis; kolm kohta vastavad küsimusele <em>kus?</em></td></tr>
+          <tr><td>Mari <span class="pred">hakkas õppima</span> kontrolltööks.</td><td><strong>Lihtlause</strong></td><td><em>hakkas õppima</em> moodustab ühe tegevuskeskuse.</td></tr>
+          <tr><td>Kui vihm <span class="pred">lõpeb</span>, <span class="pred">läheme</span> õue.</td><td><strong>Liitlause</strong></td><td>Kaks osalauset: <em>vihm lõpeb</em> + <em>läheme õue</em>.</td></tr>
+          <tr><td>Isa <span class="pred">ostis</span> leiba, piima, juustu ja puuvilju.</td><td><strong>Koondlause</strong></td><td>Üks öeldis; mitu sihitist vastavad küsimusele <em>mida?</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Kiire otsustuspuu</h2>
+    <div class="rule">
+      <strong>1. Leia öeldis(ed).</strong><br>
+      ↓<br>
+      <strong>Kas lauses on kaks või enam eri osalause tegevuskeskust?</strong><br>
+      → <b>Jah:</b> tõenäoliselt <strong>liitlause</strong>.<br>
+      → <b>Ei:</b> edasi.<br><br>
+      <strong>Kas mitu lauseliiget vastavad samale küsimusele?</strong><br>
+      → <b>Jah:</b> <strong>koondlause</strong>.<br>
+      → <b>Ei:</b> <strong>lihtlause</strong>.
+    </div>
+  </section>
+
+  <section id="test">
+    <h2>Enesetest</h2>
+    <p>Vali iga lause liik. Vastus kontrollitakse kohe.</p>
+    <div class="quiz" id="quiz">
+      <div class="q" data-answer="lihtlause"><p>1. Poiss loeb õhtul raamatut.</p><div class="choices"></div><div class="feedback"></div></div>
+      <div class="q" data-answer="liitlause"><p>2. Päike paistis, kuid õhk oli külm.</p><div class="choices"></div><div class="feedback"></div></div>
+      <div class="q" data-answer="koondlause"><p>3. Laual olid pliiatsid, vihikud ja raamatud.</p><div class="choices"></div><div class="feedback"></div></div>
+      <div class="q" data-answer="liitlause"><p>4. Ma lähen trenni, kui kodutöö on tehtud.</p><div class="choices"></div><div class="feedback"></div></div>
+      <div class="q" data-answer="lihtlause"><p>5. Õde peab homme vara ärkama.</p><div class="choices"></div><div class="feedback"></div></div>
+      <div class="q" data-answer="koondlause"><p>6. Suvel käisime Pärnus, Tartus ja Haapsalus.</p><div class="choices"></div><div class="feedback"></div></div>
+    </div>
+    <div class="score" id="score">Tulemus: 0 / 6</div>
+  </section>
+
+  <section>
+    <h2>30 sekundi kordamine enne kontrolltööd</h2>
+    <div class="rule">
+      <ul>
+        <li><strong>Lihtlause:</strong> üks tegevus- või seisundikeskus.</li>
+        <li><strong>Koondlause:</strong> samuti lihtlause, kuid mitu samaväärset lauseliiget vastavad samale küsimusele.</li>
+        <li><strong>Liitlause:</strong> vähemalt kaks osalauset, millest igaühel on oma öeldis.</li>
+        <li><strong>Koma:</strong> koondlauses jälgi loetelu; liitlauses jälgi osalause piire ja sidesõnu.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="footer">Õppematerjal: eesti keele lauseliigid · sobib telefonis õppimiseks ja printimiseks</div>
+</main>
+<script>
+const labels=["lihtlause","liitlause","koondlause"];
+let solved={};
+document.querySelectorAll(".q").forEach((q,idx)=>{
+  const box=q.querySelector(".choices");
+  labels.forEach(label=>{
+    const b=document.createElement("button");
+    b.textContent=label.charAt(0).toUpperCase()+label.slice(1);
+    b.addEventListener("click",()=>{
+      if(solved[idx]) return;
+      const answer=q.dataset.answer;
+      const ok=label===answer;
+      solved[idx]=ok?1:0;
+      b.classList.add(ok?"correct":"wrong");
+      q.querySelectorAll("button").forEach(btn=>{
+        if(btn.textContent.toLowerCase()===answer) btn.classList.add("correct");
+        btn.disabled=true;
+      });
+      q.querySelector(".feedback").textContent=ok?"Õige.":"Õige vastus on "+answer+".";
+      const total=Object.values(solved).reduce((a,b)=>a+b,0);
+      document.getElementById("score").textContent="Tulemus: "+total+" / 6";
+    });
+    box.appendChild(b);
+  });
+});
+</script>
+</body>
+</html>
